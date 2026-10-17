@@ -1,0 +1,58 @@
+<title>字靈戰紀說明書</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500;700;900&family=Orbitron:wght@700;900&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
+<style>
+/* layout: one reading column under a game-style title plate; sticky chapter rail on wide screens */
+:root{--bg:#070a1f;--panel:#111840;--line:#2b3a7a;--fg:#e9f0ff;--mute:#9fb0d6;--cyan:#3ef0ff;--pink:#ff4fd8;--gold:#ffd84a;
+--fd:"Orbitron","Rajdhani",sans-serif;--fb:"Noto Sans TC","Microsoft JhengHei",sans-serif;--fu:"Rajdhani","Noto Sans TC",sans-serif;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font:16px/1.75 var(--fb);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:24px 48px}
+.wrap{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:200px minmax(0,1fr);gap:40px}
+header{grid-column:1/-1;padding:28px 28px 22px;background:linear-gradient(120deg,rgba(62,240,255,.14),rgba(255,79,216,.12) 60%,transparent),var(--panel);border:1px solid var(--line);clip-path:polygon(0 0,calc(100% - 22px) 0,100% 22px,100% 100%,22px 100%,0 calc(100% - 22px))}
+header h1{margin:0;font:900 clamp(34px,6vw,58px)/1.05 var(--fb);letter-spacing:.06em;background:linear-gradient(180deg,#fff,#bdf6ff 50%,#ff8be6);-webkit-background-clip:text;background-clip:text;color:transparent;text-wrap:balance}
+header .en{font:900 clamp(13px,2vw,18px) var(--fd);letter-spacing:.42em;color:var(--cyan);margin-top:6px}
+header p{color:var(--mute);margin:12px 0 0;max-width:62ch}
+nav{position:sticky;top:calc(16px + env(safe-area-inset-top,0px));align-self:start;display:flex;flex-direction:column;gap:6px}
+nav a{color:var(--mute);text-decoration:none;font-weight:700;padding:6px 12px;border-left:3px solid var(--line)}
+nav a:hover,nav a:focus-visible{color:var(--fg);border-left-color:var(--cyan);outline:none}
+main{min-width:0}
+section{padding:8px 0 28px;border-bottom:1px solid var(--line);scroll-margin-top:16px}
+h2{display:flex;align-items:baseline;gap:14px;font:900 26px/1.3 var(--fb);margin:22px 0 6px;text-wrap:balance}
+h2 span{font:900 15px var(--fd);color:var(--pink);letter-spacing:.1em}
+h4{color:var(--cyan);font-size:18px;margin:20px 0 6px}
+p,li{max-width:68ch}
+b{color:var(--gold)}
+.tw{overflow-x:auto;margin:10px 0}
+table{border-collapse:collapse;font-size:15px;min-width:420px}
+th,td{border:1px solid var(--line);padding:6px 12px;text-align:left;vertical-align:top}
+th{background:rgba(62,240,255,.1);color:var(--cyan)}
+kbd{font:700 14px var(--fu);padding:1px 7px;border-radius:4px;background:#1c2558;box-shadow:inset 0 -2px 0 #000;color:#fff;white-space:nowrap}
+footer{grid-column:1/-1;color:var(--mute);font:600 13px var(--fu);letter-spacing:.08em;text-align:center}
+@media (max-width:760px){.wrap{grid-template-columns:1fr;gap:20px}nav{position:static;flex-direction:row;flex-wrap:wrap}nav a{border-left:0;border-bottom:2px solid var(--line);padding:4px 8px}}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+</style>
+<div class="wrap">
+<header><h1>字靈戰紀</h1><div class="en">LEXICON WARS · MANUAL</div><p>用單字當彈藥的多人即時戰略 RPG。國中 2000 字＋高中 7000 字分 7 個等級，1–4 人同機或線上合作、對戰。這份是線上遊戲說明書。</p></header>
+<nav aria-label="章節"><a href="#start">快速開始</a><a href="#controls">操作方式</a><a href="#battle">遭遇戰</a><a href="#rts">攻城戰</a><a href="#rpg">成長系統</a><a href="#words">字庫與題型</a><a href="#multi">多人連線</a><a href="#settings">設定與存檔</a><a href="#faq">常見問題</a></nav>
+<main><section id="start"><h2><span>01</span>快速開始</h2><h4>故事</h4><p>大陸 Lexia 的萬物由「字靈」構成——說出 <kbd>river</kbd>，河才會流動。封印在字典深處的魔王「默者 The Muter」甦醒，放出<b>失語之霧</b>：被霧籠罩的人會忘記單字，世界跟著褪成灰色。你是新入學的<b>拼字者 Speller</b>，要奪回七座字之塔。</p>
+<h4>三分鐘上手</h4><ol><li>主選單按「開始冒險」→ 輸入名字、選職業 → 出陣。也可以選「入學測驗後開始」，答 30 題，程度好的同學可直接從第 2、3 章開始。</li><li>在大地圖上移動，走到噴泉旁按「互動」進入城鎮。</li><li>碰到魔物會進入<b>遭遇戰</b>：下方答題列答對就攻擊、答錯會被反擊。</li><li>走到<b>戰旗</b>按互動開始<b>攻城戰</b>；攻下 3 個以上據點後，就能挑戰該區的<b>字之塔塔主</b>。</li><li>擊敗塔主＋隊長達到等級門檻，結界門就會打開，前往下一區。</li></ol>
+<h4>七個區域與單字等級</h4><div class="tw"><table><tr><th>區域</th><th>單字</th><th>開放門檻</th></tr><tr><td>晨光原野</td><td>Lv0 國中 2000 字</td><td>Lv1</td></tr><tr><td>潮聲灣</td><td>Lv1 高中 1 級</td><td>Lv8＋擊敗塔主</td></tr><tr><td>綠蔭境</td><td>Lv2 高中 2 級</td><td>Lv16</td></tr><tr><td>赤砂廊</td><td>Lv3 高中 3 級</td><td>Lv24</td></tr><tr><td>霜語城</td><td>Lv4 高中 4 級</td><td>Lv32</td></tr><tr><td>雲階</td><td>Lv5 高中 5 級</td><td>Lv42</td></tr><tr><td>默之塔</td><td>Lv6 高中 6 級</td><td>Lv50</td></tr></table></div>
+<p>地圖上灰色的地方是失語之霧。每次在附近打贏戰鬥，周圍就會恢復色彩；擊敗塔主，整區都會上色。右上角小地圖顯示「霧散 %」。</p></section><section id="controls"><h2><span>02</span>操作方式</h2><h4>電腦</h4><div class="tw"><table><tr><th>動作</th><th>預設按鍵</th></tr><tr><td>移動</td><td><kbd>↑↓←→</kbd> 或 <kbd>W A S D</kbd>，或滑鼠點地面</td></tr><tr><td>互動 / 確認</td><td><kbd>Space</kbd> / <kbd>Enter</kbd></td></tr><tr><td>作答（P1）</td><td><kbd>1</kbd><kbd>2</kbd><kbd>3</kbd><kbd>4</kbd> 或滑鼠點選；拼字題直接打字，<kbd>Backspace</kbd> 刪除</td></tr><tr><td>技能</td><td><kbd>E</kbd></td></tr><tr><td>切換兵種 / 路線（攻城戰）</td><td><kbd>Tab</kbd> / <kbd>Q</kbd></td></tr><tr><td>道具</td><td><kbd>H</kbd> 提示卷軸、<kbd>J</kbd> 時光沙漏、<kbd>K</kbd> 詞性透鏡</td></tr><tr><td>重播發音</td><td><kbd>R</kbd></td></tr><tr><td>選單 / 暫停 / 全螢幕</td><td><kbd>M</kbd> / <kbd>P</kbd> / <kbd>F</kbd></td></tr></table></div><p>所有按鍵都能在「設定 → 自訂按鍵」修改。也支援 USB / 藍牙遊戲手把（作答時 A/B/X/Y 對應選項①②③④）。</p>
+<h4>手機、平板</h4><ul><li>先按右上角「全螢幕」：畫面會固定在螢幕上，不會捲動或被放大縮小。iPhone 不支援原生全螢幕時，會改用「填滿視窗」模式。</li><li>建議橫向持握。點地面即可移動；需要搖桿可在設定開啟「螢幕搖桿」。</li><li>作答直接點選項；拼字題點下方字母磚。</li></ul>
+<h4>同機多人</h4><p>每位玩家在答題列都有自己的欄位：P1 用 <kbd>1-4</kbd>、P2 用 <kbd>7 8 9 0</kbd>、P3 用數字鍵盤 <kbd>1-4</kbd>、P4 用數字鍵盤 <kbd>6-9</kbd>，或各自用觸控 / 手把。</p></section><section id="battle"><h2><span>03</span>遭遇戰</h2><h4>遭遇戰（RPG）</h4><p>敵人頭上顯示它的<b>英文名字與等級</b>，題目就出該等級的字。答對＝攻擊，越快答對傷害越高（3 秒內 ×1.5、6 秒內 ×1.2）；連續答對有連擊加成（3 連 ×1.2、5 連 ×1.5、10 連 ×2）。答錯會受到「失語反噬」（扣 5% HP）並被敵人反擊。敵人也會每隔幾秒主動攻擊，別發呆！</p>
+<p>全隊 HP 歸零會回到城鎮並損失 10% 當前經驗（不會降級）。</p>
+<h4>職業技能（消耗 MP，答對題目回 MP）</h4><div class="tw"><table><tr><th>職業</th><th>技能</th><th>效果</th></tr><tr><td>詞鋒劍士</td><td>斷詞斬</td><td>出一題拼字，答對造成 3 倍以上傷害</td></tr><tr><td>語咒法師</td><td>同義風暴</td><td>連續 5 題快答英→中，每題答對降下隕石打全體</td></tr><tr><td>詞性遊俠</td><td>詞性穿甲箭</td><td>出一題詞性辨識，答對貫穿全體、可破 Boss 護盾</td></tr><tr><td>字典祭司</td><td>共鳴祈禱</td><td>答對後全隊回 35% HP，之後隊友答對時祭司也回血</td></tr></table></div>
+<h4>灰色封印魔物</h4><p>解放後的區域會出現灰色魔物，牠們身上是<b>你答錯過的字</b>。打倒牠們就是複習；同一個字答對 2 次即從錯題本洗白。</p></section><section id="rts"><h2><span>04</span>攻城戰</h2><h4>攻城戰（RTS）</h4><p>左邊是你的<b>字核</b>，右邊是敵方字核。敵軍會一波波推進，你一邊操控英雄移動（自動攻擊身邊敵人），一邊在下方答題：答對就產生<b>墨水</b>並召喚士兵。</p>
+<h4>一個詞性一個兵種</h4><div class="tw"><table><tr><th>兵種</th><th>召喚題詞性</th><th>特性</th><th>克制</th></tr><tr><td>名詞盾兵</td><td>n.</td><td>血厚</td><td>副詞騎兵</td></tr><tr><td>動詞戰士</td><td>v.</td><td>高攻</td><td>形容詞弓手</td></tr><tr><td>形容詞弓手</td><td>adj.</td><td>遠程</td><td>名詞盾兵</td></tr><tr><td>副詞騎兵</td><td>adv.</td><td>高速、愛拆塔</td><td>動詞戰士</td></tr><tr><td>連介法師</td><td>prep. / conj. 等</td><td>範圍傷害＋暈眩</td><td>—</td></tr></table></div>
+<p>左側兵種卡選哪一種，下一題就出那個詞性；選「自動」會依敵軍組成自動挑剋制兵種。<b>想要什麼兵，就得練什麼詞性。</b></p>
+<h4>地圖要素</h4><ul><li><b>書庫</b>：中路三座，站在旁邊（沒有敵人）即可佔領，每 5 秒產墨水。</li><li><b>防禦塔</b>：自動射擊靠近的敵人。</li><li><b>塔主</b>：開戰約 35 秒後登場，帶有名字護盾。每第 3 題會變成<b>破盾題（拼字）</b>，答對削 1 層護盾。</li></ul><p>拆掉敵方字核即獲勝；10 分鐘到時以字核剩餘比例判定。評價 ★：勝利／正確率 80%↑／6 分鐘內。</p></section><section id="rpg"><h2><span>05</span>成長系統</h2><h4>等級與屬性</h4><p>等級上限 60。每升 1 級 HP、MP 上升並獲得 1 點屬性點（選單 → 角色 分配）。力量＝物理傷害、智力＝魔法與 MP、敏捷＝答題時間 +0.1 秒/點（上限 +3 秒）、體質＝HP。</p><p>答比自己所在區域低 2 級以上的字，經驗只有三成，避免一直刷簡單字。</p>
+<h4>裝備與道具</h4><p>城鎮鍛造屋用<b>字晶</b>強化武器、防具、飾品；字晶來自拼字題、精英怪、Boss 與寶箱。道具商店用<b>墨水</b>購買提示卷軸、時光沙漏、詞性透鏡，每場戰鬥每人最多用 3 次。</p>
+<h4>收集與複習</h4><ul><li><b>字靈圖鑑</b>：每個字答對 3 次就收服成卡，稀有度依等級 N / R / SR / SSR / UR。</li><li><b>錯題本</b>：答錯的字自動記錄，3–5 題後會換題型再考一次（間隔重複）。城鎮的<b>字之泉</b>專門出錯題，答完全隊回滿。</li><li><b>每日 / 每週任務</b>、<b>支線任務</b>（頭上有「!」的居民）、<b>石碑謎題</b>（連拼 3 字開密室）、<b>寶箱</b>。</li><li><b>成就與稱號</b>、<b>學習報告</b>（可下載分享卡片）。</li></ul></section><section id="words"><h2><span>06</span>字庫與題型</h2><h4>字庫</h4><p>國中 2000 字（Lv0）＋高中 7000 字分 6 級（Lv1–Lv6），共約 9,000 個字詞條目，每題都標註詞性。同一個字若國中、高中都有，以最低等級為準；高中新增的詞性或字義保留在原等級。字庫已校正國中字表中的拼字錯誤與多處詞性標註。題庫以加密形式內嵌，網頁原始碼中看不到題目與答案。</p>
+<h4>題型</h4><div class="tw"><table><tr><th>題型</th><th>說明</th></tr><tr><td>英→中</td><td>看英文與詞性，選中文字義（會自動朗讀）</td></tr><tr><td>中→英</td><td>看中文與詞性，選英文單字</td></tr><tr><td>聽力</td><td>只聽發音，選中文字義（按 ♫ 可重播）</td></tr><tr><td>詞性辨識</td><td>看單字與這個字義，選出詞性</td></tr><tr><td>拼字</td><td>看中文拼出英文。Lv0–2 給首字母，Lv3 以上只給字數，等級越高干擾字母越多</td></tr></table></div>
+<p>干擾選項優先從同等級、同詞性、字首或字長相近的字抽出；意思重疊的同義字不會同時出現在選項中。答題時限：Lv0 8 秒、Lv1–2 10 秒、Lv3–4 12 秒、Lv5–6 15 秒（拼字題加倍）。發音使用瀏覽器內建的語音合成（可在設定調整語音音量或關閉自動朗讀）。</p></section><section id="multi"><h2><span>07</span>多人連線</h2><h4>同機多人（1–4 人）</h4><p>「出陣準備」選人數，把座位設為「玩家」或「電腦」。每位真人玩家在答題列都有自己的欄位。</p>
+<h4>線上連線（Relay 雲端中繼）</h4><ol><li>房主：主選單「多人 / 挑戰」→ 連線方式選「開房 (Relay)」→ 會產生 6 碼房號、連結與 QR code。</li><li>把要給朋友的座位設為「線上」。</li><li>朋友打開同一個網頁 →「多人 / 挑戰」→「加入 (Relay)」輸入房號；或直接掃 QR code。</li><li>人齊後房主按「出陣」。</li></ol><p>房主負責整個遊戲世界與存檔；其他人在自己的手機或電腦上答題、操控自己的英雄。斷線時會暫時由電腦代打，重新開啟頁面即可回到原座位。</p>
+<h4>模式</h4><ul><li><b>冒險主線</b>：合作攻略七章。</li><li><b>詞鋒對決 PvP</b>：A、B 兩隊互拆字核（1v1、2v2…）。</li><li><b>世界Boss・默者降臨</b>：全隊以拼字題擊破 12 層名字護盾。</li><li><b>無盡字典塔</b>：連續爬塔挑戰最高樓層。</li></ul></section><section id="settings"><h2><span>08</span>設定與存檔</h2><h4>設定項目</h4><div class="tw"><table><tr><th>項目</th><th>預設</th></tr><tr><td>背景音樂（26 首，依場景自動切換；也可固定一首）</td><td>關閉</td></tr><tr><td>音效</td><td>開啟</td></tr><tr><td>主音量 / 音樂 / 音效 / 語音音量</td><td>—</td></tr><tr><td>全螢幕</td><td>關閉</td></tr><tr><td>繪圖：WebGPU 硬體 / 軟體</td><td>WebGPU（不支援時自動改用軟體）</td></tr><tr><td>畫質：流暢 720p / 標準 1080p / 高 2K 1440p / 極致 4K</td><td>流暢</td></tr><tr><td>螢幕搖桿</td><td>關閉</td></tr><tr><td>劇情提示（畫面上方的目標提示）</td><td>開啟</td></tr><tr><td>自訂按鍵、畫面震動、電腦隊友強度、雲端中繼網址</td><td>—</td></tr></table></div>
+<h4>背景音樂</h4><p>音樂是即時合成的，涵蓋管弦史詩、電子（EDM / Synthwave / Cyberpunk）、搖滾金屬、民族音樂（風笛、笛子、尺八、三味線、烏德琴）與環境音樂。探索時是基本層，魔物靠近或戰況激烈時會即時疊上打擊與主旋律層；主角、Pip、館長、雙子與默者都有自己的主題旋律，在不同場景以變奏重現。</p>
+<h4>存檔</h4><p>3 個存檔欄＋自動存檔（每分鐘、回主選單、切換分頁時）。存檔在這台裝置的瀏覽器裡；換裝置請用「匯出存檔檔案 / 匯入存檔檔案」。只能在大地圖上存檔。</p><p>「重新開始」：戰鬥中＝重打這一場；大地圖上＝回到出陣準備。「暫停」可隨時暫停（線上對戰時只暫停自己的畫面）。</p></section><section id="faq"><h2><span>09</span>常見問題</h2><h4>沒有聲音？</h4><p>背景音樂預設關閉，請到設定開啟。iPhone 請關閉靜音開關或調高音量；第一次需要點一下畫面才能發聲。</p><h4>沒有發音？</h4><p>發音使用瀏覽器內建語音。部分 Android 瀏覽器需在系統設定安裝英文語音資料。</p><h4>畫面卡頓？</h4><p>把畫質調成「流暢」，或把繪圖改成「軟體」試試看。</p><h4>線上連不到？</h4><p>確認網路正常、房號正確；校園網路若封鎖 WebSocket 會無法連線。</p><h4>版權</h4><p>© 2026 AEML, NTUST（國立臺灣科技大學）。本遊戲的程式碼受完整性檢查保護，任何修改都會使遊戲停止運作。</p></section></main>
+<footer>© 2026 AEML, NTUST · Advanced Engineering Materials Lab, National Taiwan University of Science and Technology</footer>
+</div>
